@@ -1,0 +1,44 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="table-responsive table-responsive-data2">
+			<div class="modal-header" >
+				<button type="button" class="btn btn-primary pull-right"
+					ng-click="addproducts()">Thêm mới</button>
+
+				<div class="clearfix"></div>
+			</div>
+			<table id="datatable" class="table table-data2">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Tên</th>
+						<th>Giá</th>
+						<th>Link Ảnh</th>
+						<th>Lựa chọn</th>
+					</tr>
+				</thead>
+				<tr ng-repeat="products in listProducts" class="dataProducts-{{products.id}}">
+					<td>{{ products.id }}</td>
+					<td>{{ products.nameProduct }}</td>
+					<td>{{ products.price }}</td>
+					<!-- <td><a href="https://{{ products.fileName }}" target="_blank">view</a></td> -->
+					<!-- <td><img src="https://{{ products.fileName }}" width="100"/></td> -->
+					<td><button ng-click="showImages(products.id)" >Show Images</button></td>
+					<td><button class="btn btn-primary" ng-click="deleteproducts(products.id)">Delete</button>
+					</td>
+				</tr>
+				<tfoot>
+					<tr>
+
+						<th>ID</th>
+						<th>Tên</th>
+						<th>Giá</th>
+						<th>Link Ảnh</th>
+						<th>Lựa chọn</th>
+					</tr>
+
+				</tfoot>
+			</table>
+		</div>
+	</div>
+</div>

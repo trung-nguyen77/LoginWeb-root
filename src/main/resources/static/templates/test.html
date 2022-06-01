@@ -1,0 +1,54 @@
+
+<span ng-if="dataTaobao.name">{{dataTaobao.name}}</span>
+<br ng-if="dataTaobao.name">
+<span ng-if="dataTaobao.shopName">Sản phẩm của Shop
+	:{{dataTaobao.shopName}}</span>
+<br ng-if="dataTaobao.shopName">
+<span ng-show="dataTaobao.startPrice" class="priceProduct">Giá :
+	<span style="color: #ff7701"> <span
+		ng-if="dataTaobao.startPrice">¥{{dataTaobao.startPrice}}</span> <span
+		ng-if="dataTaobao.sellPrice">-¥{{dataTaobao.sellPrice}}</span> <span
+		ng-if="dataTaobao.startPrice">~{{formatNumber(dataTaobao.startPrice?dataTaobao.startPrice*
+			3.4:"0")}}đ</span> <span ng-if="dataTaobao.sellPrice">-{{formatNumber(dataTaobao.sellPrice?dataTaobao.sellPrice*3.4:"0")}}đ</span>
+</span>
+</span>
+<br ng-if="dataTaobao.startPrice">
+<span class="hidden priceSelected">Giá :¥<span
+	style="color: #ff7701"></span></span>
+<br ng-if="dataTaobao.startPrice">
+<div ng-repeat="prptProduct in dataTaobao.propertyDTO">
+	<div class="prptProduct" ng-if="prptProduct.title">
+		{{prptProduct.title}}:
+		<div class="propertiesDTOS" titleProperties="{{prptProduct.title}}"
+			titlee="{{productt.title}}" idProperties="{{productt.id}}"
+			ng-repeat="productt in prptProduct.propertiesDTOS">
+			<div ng-if="!productt.image">{{productt.title}}</div>
+			<div>
+				<a ng-if="productt.image"><img
+					ng-click="clickImage(productt.image)" src="{{productt.image}}"></a>
+			</div>
+		</div>
+	</div>
+</div>
+<br ng-if="dataTaobao.propertyDTO">
+<span ng-if="dataTaobao.name" class="choose"></span>
+<br ng-if="dataTaobao.name">
+<div ng-if="dataTaobao">
+	<span>Số lượng:</span></span>
+	<div></div>
+	<button type="button" ng-click="downAmount()" class="btn btn-default">-</button>
+	<span style="width: 10px">{{Amount}}</span>
+	<button type="button" class="btn btn-default" ng-click="upAmount()">+</button>
+	<br>
+</div>
+<span class="quantity" ng-if="dataTaobao.quantityStock">Số lượng
+	trong kho còn :{{dataTaobao.quantityStock}} sản phẩm</span>
+<span class="hidden quaityOnly" ng-if="dataTaobao.quantityStock">Số
+	lượng trong kho còn :<span></span> sản phẩm
+</span>
+<br>
+<button ng-if="dataTaobao" ng-click="addcart()" type="button"
+	class="btn btn-warning">Thêm vào giỏ hàng</button>
+<a href="/#/giohang" ng-if="dataTaobao" type="button"
+	ng-click="toCart()" class="btn btn-info">Đến giỏ hàng</a>
+</div>

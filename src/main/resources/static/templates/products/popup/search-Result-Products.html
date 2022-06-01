@@ -1,0 +1,128 @@
+
+<div class="modal-images">
+	<div class="modal-header">
+		<h4>
+			<b>! </b>Thông tin sảm phẩm
+		</h4>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="tb-item-info-l">
+				<div class="tb-gallery">
+					<div class="tb-pic tb-s50">
+						<img src="https://{{pro}}" id="bigImages">
+					</div>
+				</div>
+			</div>
+			<div class="row-new">
+				<div ng-repeat="p in products.links" class="padding-left">
+					<a ng-click="showInforImages(p)"> <img src="https://{{p}}"
+						id="smallImages">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-7">
+
+			<div class="tb-item-info-r" data-spm="iteminfo">
+				<div class="tb-property tb-property-x">
+					<div class="tb-wrap tb-wrap-newshop">
+
+						<div id="J_Title" class="tb-title" shortcut-key="t"
+							shortcut-label="查看宝贝标题" shortcut-effect="focus">
+							<h4 class="tb-main-title"></h4>
+							<p class="text-name">
+								<b>{{products.nameProduct}}</b>
+							</p>
+
+						</div>
+						<div id="J_Title" class="tb-title" shortcut-key="t"
+							shortcut-label="查看宝贝标题" shortcut-effect="focus">
+							<b>Sản phẩm</b> của shop:<span> {{products.shopName}}</span>
+
+						</div>
+
+						<br>
+						<div class="row">
+							<div class="col-md-3">
+								<b>Giá:</b>
+							</div>
+							<div class="col-md-9">
+								<em class="tb-rmb">¥</em><em class="tb-rmb-num">{{products.price}}</em>
+							</div>
+
+							<div class="col-md-3">
+								<b>商品属性 </b>:
+							</div>
+							<div class="col-md-9" ng-repeat="p in products.propertyProps">
+								<button ng-click="">{{products.methodProductString}}</button>
+							</div>
+
+							<div class="col-md-3">
+								<b>销售属性 </b>:
+							</div>
+							<div class="col-md-9">
+							
+								<button ng-click="">{{products.methodSellString[0]}}</button>
+								<button ng-click="">{{products.methodSellString[1]}}</button>
+							</div>
+
+							<br>
+							<div class="col-md-3">
+								<b>颜色分类</b>:
+							</div>
+							<div class="col-md-9">
+								<a ng-click="">
+									<button ng-click="showInforImages(products.links[2])">
+										<img src="https://{{products.links[2]}}" id="smallImages">
+									</button>
+								</a> <a ng-click="">
+									<button ng-click="showInforImages(products.links[3])">
+										<img src="https://{{products.links[3]}}" id="smallImages">
+									</button>
+								</a>
+							</div>
+							<br>
+							<div class="col-md-3">
+								<label>大小:</label>
+							</div>
+							<div class="col-md-9">
+								<button ng-click="" value="L">L</button>
+								<button ng-click="" value="M">M</button>
+								<button ng-click="" value="S">S</button>
+							</div>
+			
+							<div class="col-md-3">
+								<label>Số Lượng:</label>
+							</div>
+							<div class="col-md-9">
+								<button ng-click="">-</button>
+								<input type="text" class="text-alight" value="1" maxlength="8"
+									size="3">
+								<button ng-click="">+</button>
+							</div>
+
+							<div class="col-md-3">
+								<label>Ghi chú: </label>
+							</div>
+							<div class="col-md-9">
+								<textarea rows="5" cols="45"></textarea>
+							</div>
+						</div>
+						<button ng-click="" class="button-red">
+							<p class="text-char">Thêm vào giỏ hàng</p>
+						</button>
+						<button ng-click="" class="button-blue">
+							<p class="text-char">Đến giỏ hàng</p>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="button-gray" ng-click="cancel()">Đóng</button>
+	</div>
+</div>
+
+

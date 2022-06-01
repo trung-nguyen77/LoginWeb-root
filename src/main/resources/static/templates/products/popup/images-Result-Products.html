@@ -1,0 +1,28 @@
+<div class="modal-images">
+	<div class="modal-header">
+		<h4><b>! </b>Thông tin sảm phẩm</h4>
+	</div>
+	<div class="tb-item-info-l">
+		<div class="tb-gallery">
+			<div class="tb-booth tb-pic tb-main-pic tb-pic-mode"></div>
+
+			<div class="tb-pic tb-s50">
+				<img src="https://{{pro}}" id="bigImages">
+			</div>
+
+		</div>
+	</div>
+	
+	<div class="row">
+		<div ng-repeat="p in products.links" class="col-sm-auto">
+			<a ng-click="showInforImages(p)"><img src="https://{{p}}"
+				id="smallImages"></a>
+		</div>
+	</div>
+	<!-- 	</div> -->
+	<div class="modal-footer">
+		<button type="button" class="btn btn-primary pull-right"
+			ng-click="cancel()">CANCEL</button>
+	</div>
+	<!-- </div> -->
+</div>

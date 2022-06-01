@@ -1,0 +1,118 @@
+
+<div class="modal-images">
+	<div class="modal-header">
+		<h4>
+			<b>! </b>Thông tin sản phẩm
+		</h4>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="tb-item-info-l">
+				<div class="tb-gallery">
+					<div class="tb-pic tb-s50">
+						<img src="https://{{pro}}" id="bigImages">
+					</div>
+				</div>
+			</div>
+			<div class="row-new">
+				<div ng-repeat="p in products.links" class="padding-left">
+					<a ng-click="showInforImages(p)"> <img src="https://{{p}}"
+						id="smallImages">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-7">
+
+			<div class="tb-item-info-r" data-spm="iteminfo">
+				<div class="tb-property tb-property-x">
+					<div class="tb-wrap tb-wrap-newshop">
+
+						<div id="J_Title" class="tb-title">
+							<h4 class="tb-main-title"></h4>
+							<p class="text-name">
+								<b>{{products.nameProduct}}</b>
+							</p>
+
+						</div>
+						<div id="J_Title" class="tb-title">
+							<b>Sản phẩm</b> của shop:<span> {{products.shopName}}</span>
+
+						</div>
+
+						<br>
+						<div>
+							<div class="col-md-3">
+								<b>Giá:</b>
+							</div>
+							<div class="col-md-9">
+								<em>¥</em><em class="priceProduct">{{products.price}}</em><em
+									class="hidden priceNew color-Price"></em>
+
+							</div>
+							<div ng-repeat="property in products.propertyProps">
+								<div ng-if="property.nameProps" style="display: inline-flex;">
+									<b>{{property.nameProps}}</b>
+									<div ng-repeat="proper in property.propertyPropsValues">
+
+										<a title="{{proper.nameValueString}}"
+											titleChecks="{{property.nameProps}}"
+											idChecks="{{proper.vid}}" ng-if="!proper.images"
+											class="btn btn-primary" ng-click="test()">{{proper.nameValueString}}</a>
+										<!-- <button ng-if="!proper.images">{{proper.nameValueString}}</button> -->
+										<div ng-if="proper.images">
+											<a title="{{proper.nameValueString}}"
+												ng-click="showInforImages(proper.images); test()"
+												idChecks="{{proper.vid}}" images = "https://{{proper.images}}"
+												titleChecks="{{property.nameProps}}" class="btn btn-primary"><img
+												src="https://{{proper.images}}" id="smallImages"></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<label>Số Lượng:</label>
+							</div>
+							<div class="col-md-9">
+								<button ng-click="countDown(quantity)">-</button>
+								<input type="text" class="text-alight" value="{{quantity}}"
+									maxlength="8" size="3">
+								<button ng-click="countUp(quantity)">+</button>
+
+							</div>
+							<div class="hidden quantity">
+								<div class="col-md-3">
+									<label>Trong kho:</label>
+								</div>
+								<div class="col-md-9">
+
+									<span class="newquantity"><b></b></span>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<label>Ghi chú: </label>
+							</div>
+							<div class="col-md-9">
+								<textarea rows="3" cols="45"></textarea>
+							</div>
+
+						</div>
+						<div class="col-md-12">
+							<button ng-click="addCartItems()" class="button-red">
+								<p class="text-char">Thêm vào giỏ hàng</p>
+							</button>
+							<button ng-click="toCartItems()" class="button-blue">
+								<p class="text-char">Đến giỏ hàng</p>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="button-gray" ng-click="cancel()">Đóng</button>
+	</div>
+</div>
+
+

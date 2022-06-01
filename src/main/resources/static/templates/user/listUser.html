@@ -1,0 +1,44 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="table-responsive table-responsive-data2">
+			<div class="modal-header" >
+				<button type="button" class="btn btn-primary pull-right"
+					ng-click="addUser()">Thêm mới</button>
+
+				<div class="clearfix"></div>
+			</div>
+			<table id="datatable" class="table table-data2">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Tên</th>
+						<th>Số Điện Thoại</th>
+						<th>Email</th>
+						<th>Lựa chọn</th>
+					</tr>
+				</thead>
+				<tr ng-repeat="user in listUsers" class="dataUser-{{user.id}}">
+					<td>{{ user.id }}</td>
+					<td>{{ user.username }}</td>
+					<td>{{ user.phone }}</td>
+					<td>{{ user.email }}</td>
+					<td><button class="btn btn-primary"
+							ng-click="showModal(user.id)">Edit</button>
+						<button class="btn btn-primary" ng-click="deleteUser(user.id)">Delete</button>
+					</td>
+				</tr>
+				<tfoot>
+					<tr>
+
+						<th>ID</th>
+						<th>Tên</th>
+						<th>Số Điện Thoại</th>
+						<th>Email</th>
+						<th>Lựa chọn</th>
+					</tr>
+
+				</tfoot>
+			</table>
+		</div>
+	</div>
+</div>
